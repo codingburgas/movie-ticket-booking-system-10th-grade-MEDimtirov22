@@ -1,4 +1,4 @@
-#include "./visualFunctions.h"
+#include "visualFunctions.h"
 
 void clearScreen() {
 #ifdef _WIN32

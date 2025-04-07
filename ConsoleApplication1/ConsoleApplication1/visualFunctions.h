@@ -1,16 +1,18 @@
 #pragma once
-#include "pch.h"
+#ifndef VISUALFUNCTIONS_H
+#define VISUALFUNCTIONS_H
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <windows.h>
 
 void clearScreen();
-
 void fullScreen();
-
-void paddingUp(int paddingSize);
-
 void printLogo(const std::string& filename);
-
+void paddingUp(int paddingSize);
 int getConsoleWidth();
-
+void centerText(std::string text);
 void exitMessage();
 
-void centerText(std::string text);
+#endif

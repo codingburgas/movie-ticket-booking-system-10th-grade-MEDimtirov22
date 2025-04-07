@@ -127,11 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="data.cpp" />
+    <ClCompile Include="functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="visualFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="data.h" />
+    <ClInclude Include="functions.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="structs.h" />
     <ClInclude Include="visualFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
