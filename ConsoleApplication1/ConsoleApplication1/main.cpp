@@ -1,6 +1,4 @@
-#include <iostream>
-#include <string>
-#include <cstdlib>
+#include "./visualFunctions.h"
 
 using namespace std;
 
@@ -17,14 +15,6 @@ struct Movie {
     string title;
     string genre;
 };
-
-void clearScreen() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
 
 int main() {
     City cities[] = {
