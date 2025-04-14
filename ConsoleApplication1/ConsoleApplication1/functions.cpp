@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "functions.h"
 #include "data.h"
 #include "visualFunctions.h"
@@ -75,9 +76,15 @@ int selectMovie(int genreChoice) {
     int movieChoice;
     clearScreen();
     cout << "Available movies in " << genres[genreChoice - 1] << " genre:\n";
+
+    vector<int> filteredMovieIndices;
+    int filteredIndex = 1;
+
     for (int i = 0; i < 6; ++i) {
         if (movies[i].genre == genres[genreChoice - 1]) {
-            cout << i + 1 << ". " << movies[i].title << endl;
+            cout << filteredIndex << ". " << movies[i].title << endl;
+            filteredMovieIndices.push_back(i);
+            ++filteredIndex;
         }
     }
 
@@ -85,14 +92,13 @@ int selectMovie(int genreChoice) {
         cout << "Enter your choice of movie: ";
         cin >> movieChoice;
 
-        if (movieChoice >= 1 && movieChoice <= 6 && movies[movieChoice - 1].genre == genres[genreChoice - 1]) {
-            break;
+        if (movieChoice >= 1 && movieChoice <= filteredMovieIndices.size()) {
+            return filteredMovieIndices[movieChoice - 1];
         }
         else {
             cout << "Invalid choice. Please select a valid movie.\n";
         }
     }
-    return movieChoice;
 }
 
 void printBookingDetails(int cityChoice, int cinemaChoice, int movieChoice) {

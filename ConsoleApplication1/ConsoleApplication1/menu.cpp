@@ -1,0 +1,32 @@
+#include <iostream>
+#include "functions.h"
+#include "visualFunctions.h"
+
+using namespace std;
+
+void mainMenu() {
+    clearScreen();
+    printLogo("logo.txt");
+    cout << "Welcome to the Movie Ticket Booking System!\n";
+    cout << "1. Start Booking\n";
+    cout << "2. Exit\n";
+
+    int choice;
+    cout << "Choice (1-2): ";
+    cin >> choice;
+
+    if (choice == 1) {
+        int cityChoice = selectCity();
+        int cinemaChoice = selectCinema(cityChoice);
+        int genreChoice = selectGenre();
+        int movieChoice = selectMovie(genreChoice);
+        printBookingDetails(cityChoice, cinemaChoice, movieChoice);
+    }
+    else if (choice == 2) {
+        exitMessage();
+    }
+    else {
+        cout << "Invalid choice. Please try again.\n";
+        mainMenu();
+    }
+}

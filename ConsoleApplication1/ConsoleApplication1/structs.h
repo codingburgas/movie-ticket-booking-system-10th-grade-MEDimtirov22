@@ -3,6 +3,7 @@
 #define STRUCTS_H
 
 #include <string>
+#include <vector>
 using namespace std;
 
 struct Cinema {
@@ -11,7 +12,7 @@ struct Cinema {
 
 struct City {
     string name;
-    Cinema cinemas[2];
+    vector<Cinema> cinemas;
 };
 
 struct Movie {
