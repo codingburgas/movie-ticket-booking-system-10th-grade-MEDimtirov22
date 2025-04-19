@@ -1,4 +1,5 @@
 #include <iostream>
+#include "seating.h"
 #include "functions.h"
 #include "visualFunctions.h"
 
@@ -21,6 +22,10 @@ void mainMenu() {
         int genreChoice = selectGenre();
         int movieChoice = selectMovie(genreChoice);
         printBookingDetails(cityChoice, cinemaChoice, movieChoice);
+        SeatingLayout layout = createSampleLayout();
+        displayLayout(layout);
+        bookSeats(layout);
+        displayLayout(layout);
     }
     else if (choice == 2) {
         exitMessage();

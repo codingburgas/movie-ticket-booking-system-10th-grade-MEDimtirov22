@@ -131,6 +131,7 @@
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="seating.cpp" />
     <ClCompile Include="visualFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,7 @@
     <ClInclude Include="functions.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="seating.h" />
     <ClInclude Include="structs.h" />
     <ClInclude Include="visualFunctions.h" />
   </ItemGroup>
