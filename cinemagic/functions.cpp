@@ -11,14 +11,14 @@ int selectCity() {
     while (true) {
         clearScreen();
         cout << "Please select a city:\n";
-        for (int i = 0; i < 3; ++i) {
+        for (int i = 0; i < NUM_CITIES; ++i) {
             cout << i + 1 << ". " << cities[i].name << endl;
         }
 
-        cout << "Choice (1-3): ";
+        cout << "Choice (1-" << NUM_CITIES << "): ";
         cin >> cityChoice;
 
-        if (cityChoice >= 1 && cityChoice <= 3) {
+        if (cityChoice >= 1 && cityChoice <= NUM_CITIES) {
             break;
         }
         else {
@@ -32,15 +32,16 @@ int selectCinema(int cityChoice) {
     int cinemaChoice;
     clearScreen();
     cout << "You selected " << cities[cityChoice - 1].name << ". Please select a cinema:\n";
-    for (int i = 0; i < 2; ++i) {
+    int cinemaCount = cities[cityChoice - 1].cinemas.size();
+    for (int i = 0; i < cinemaCount; ++i) {
         cout << i + 1 << ". " << cities[cityChoice - 1].cinemas[i].name << endl;
     }
 
     while (true) {
-        cout << "Choice (1-2): ";
+        cout << "Choice (1-" << cinemaCount << "): ";
         cin >> cinemaChoice;
 
-        if (cinemaChoice >= 1 && cinemaChoice <= 2) {
+        if (cinemaChoice >= 1 && cinemaChoice <= cinemaCount) {
             break;
         }
         else {
@@ -54,15 +55,15 @@ int selectGenre() {
     int genreChoice;
     clearScreen();
     cout << "Please select a genre:\n";
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < NUM_GENRES; ++i) {
         cout << i + 1 << ". " << genres[i] << endl;
     }
 
     while (true) {
-        cout << "Choice (1-5): ";
+        cout << "Choice (1-" << NUM_GENRES << "): ";
         cin >> genreChoice;
 
-        if (genreChoice >= 1 && genreChoice <= 5) {
+        if (genreChoice >= 1 && genreChoice <= NUM_GENRES) {
             break;
         }
         else {
@@ -80,7 +81,7 @@ int selectMovie(int genreChoice) {
     vector<int> filteredMovieIndices;
     int filteredIndex = 1;
 
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < NUM_MOVIES; ++i) {
         if (movies[i].genre == genres[genreChoice - 1]) {
             cout << filteredIndex << ". " << movies[i].title << endl;
             filteredMovieIndices.push_back(i);

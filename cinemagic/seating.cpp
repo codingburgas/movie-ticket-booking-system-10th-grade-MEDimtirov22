@@ -44,7 +44,6 @@ SeatingLayout createSampleLayout() {
             seat.col = j;
             seat.isBooked = false;
 
-            // Simple logic: top rows are platinum, middle gold, bottom silver
             if (i < 1) seat.type = PLATINUM;
             else if (i < 3) seat.type = GOLD;
             else seat.type = SILVER;
@@ -74,5 +73,5 @@ void displayLayout(const SeatingLayout& layout) {
         }
         cout << "\033[0m\n";
     }
-    cout << "\033[0m\n"; // reset color
+    cout << "\033[0m\n";
 }
