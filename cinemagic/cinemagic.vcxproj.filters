@@ -33,6 +33,9 @@
     <ClCompile Include="seating.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="payment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="visualFunctions.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="seating.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="payment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,7 +8,6 @@ using namespace std;
 void mainMenu() {
     clearScreen();
     printLogo("logo.txt");
-    cout << "Welcome to the Movie Ticket Booking System!\n";
     cout << "1. Start Booking\n";
     cout << "2. Exit\n";
 

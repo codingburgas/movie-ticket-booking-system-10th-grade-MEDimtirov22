@@ -1,8 +1,9 @@
-#include <iostream>
-#include <vector>
+#include "pch.h"
 #include "functions.h"
 #include "data.h"
 #include "visualFunctions.h"
+#include "functions.h"
+#include "payment.h"
 
 using namespace std;
 
@@ -102,10 +103,37 @@ int selectMovie(int genreChoice) {
     }
 }
 
+double calculateTotalPrice(const vector<Seat>& selectedSeats) {
+    double total = 0.0;
+    for (const Seat& seat : selectedSeats) {
+        switch (seat.type) {
+        case PLATINUM: total += 20.0; break;
+        case GOLD: total += 15.0; break;
+        case SILVER: total += 10.0; break;
+        }
+    }
+    return total;
+}
+
+void completeBooking(int cityChoice, int cinemaChoice, int movieChoice, const vector<Seat>& selectedSeats, bool isOnlineCustomer) {
+    double totalPrice = calculateTotalPrice(selectedSeats);
+
+    cout << "Total Price: $" << fixed << setprecision(2) << totalPrice << endl;
+
+    PaymentDetails payment = getPaymentDetails(isOnlineCustomer, totalPrice);
+
+    if (processPayment(payment)) {
+        cout << "Booking confirmed!\n";
+        cout << "Enjoy your movie!\n";
+    }
+    else {
+        cout << "Payment failed. Booking not confirmed.\n";
+    }
+}
 void printBookingDetails(int cityChoice, int cinemaChoice, int movieChoice) {
     clearScreen();
     cout << "Booking successful, you have selected:" << endl;
     cout << "City: " << cities[cityChoice - 1].name << endl;
     cout << "Cinema: " << cities[cityChoice - 1].cinemas[cinemaChoice - 1].name << endl;
-    cout << "Movie: " << movies[movieChoice - 1].title << endl;
+    cout << "Movie: " << movies[movieChoice].title << endl;
 }
