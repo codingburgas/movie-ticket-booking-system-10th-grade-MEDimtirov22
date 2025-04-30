@@ -1,6 +1,4 @@
 ﻿#pragma once
-#ifndef STRUCTS_H
-#define STRUCTS_H
 
 #include <string>
 #include <vector>
@@ -32,5 +30,3 @@ struct Seat {
 struct SeatingLayout {
     vector<vector<Seat>> seats;
 };
-
-#endif

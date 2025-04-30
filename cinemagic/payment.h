@@ -1,6 +1,4 @@
 #pragma once
-#ifndef PAYMENT_H
-#define PAYMENT_H
 
 #include <string>
 
@@ -18,5 +16,5 @@ struct PaymentDetails {
 bool processPayment(const PaymentDetails& payment);
 void displayPaymentOptions(bool isOnlineCustomer);
 PaymentDetails getPaymentDetails(bool isOnlineCustomer, double totalAmount);
-
-#endif
+bool validateCreditCard(const std::string& cardNumber);
+void displayPaymentError(const std::string& errorMessage);

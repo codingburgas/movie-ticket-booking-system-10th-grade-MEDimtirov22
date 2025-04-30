@@ -35,7 +35,6 @@ City cities[] = {
 
 
 Movie movies[] = {
-    // Action
     {"The Batman", "Action"},
     {"Spider-Man: No Way Home", "Action"},
     {"Inception", "Action"},
@@ -43,7 +42,6 @@ Movie movies[] = {
     {"Mad Max: Fury Road", "Action"},
     {"Die Hard", "Action"},
 
-    // Adventure
     {"Avatar 2", "Adventure"},
     {"The Martian", "Adventure"},
     {"Indiana Jones", "Adventure"},
@@ -51,7 +49,6 @@ Movie movies[] = {
     {"Pirates of the Caribbean", "Adventure"},
     {"Jurassic Park", "Adventure"},
 
-    // Romance
     {"The Notebook", "Romance"},
     {"Titanic", "Romance"},
     {"Pride and Prejudice", "Romance"},
@@ -59,7 +56,6 @@ Movie movies[] = {
     {"A Walk to Remember", "Romance"},
     {"Me Before You", "Romance"},
 
-    // Animation
     {"Inside Out", "Animation"},
     {"Moana", "Animation"},
     {"Toy Story", "Animation"},
@@ -67,7 +63,6 @@ Movie movies[] = {
     {"Shrek", "Animation"},
     {"Coco", "Animation"},
 
-    // Horror
     {"Get Out", "Horror"},
     {"A Quiet Place", "Horror"},
     {"The Conjuring", "Horror"},

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef VISUALFUNCTIONS_H
-#define VISUALFUNCTIONS_H
 
 #include <iostream>
 #include <fstream>
@@ -14,5 +12,3 @@ void paddingUp(int paddingSize);
 int getConsoleWidth();
 void centerText(std::string text);
 void exitMessage();
-
-#endif
