@@ -1,7 +1,5 @@
 #include "payment.h"
-#include <iostream>
-#include <iomanip>
-#include <string>
+#include "pch.h"
 using namespace std;
 
 //Luhn algorithm

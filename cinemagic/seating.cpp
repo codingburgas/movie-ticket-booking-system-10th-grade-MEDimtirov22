@@ -1,5 +1,5 @@
 #include "seating.h"
-#include <iostream>
+#include "pch.h"
 using namespace std;
 
 void bookSeats(SeatingLayout& layout) {
