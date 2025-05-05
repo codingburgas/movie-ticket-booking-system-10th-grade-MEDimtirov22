@@ -6,4 +6,5 @@
 #include <Windows.h>
 #include <conio.h>
 #include <fstream>
+#include <sstream>
 #include <cstdlib>

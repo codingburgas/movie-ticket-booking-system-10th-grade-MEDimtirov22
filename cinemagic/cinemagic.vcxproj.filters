@@ -36,6 +36,15 @@
     <ClCompile Include="payment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="loginValidation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loginScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="userManagement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="visualFunctions.h">
@@ -60,6 +69,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="payment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="loginValidation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userManagement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="loginScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,4 +17,3 @@ bool processPayment(const PaymentDetails& payment);
 void displayPaymentOptions(bool isOnlineCustomer);
 PaymentDetails getPaymentDetails(bool isOnlineCustomer, double totalAmount);
 bool validateCreditCard(const std::string& cardNumber);
-void displayPaymentError(const std::string& errorMessage);

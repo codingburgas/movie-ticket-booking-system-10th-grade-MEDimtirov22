@@ -129,20 +129,26 @@
   <ItemGroup>
     <ClCompile Include="data.cpp" />
     <ClCompile Include="functions.cpp" />
+    <ClCompile Include="loginScreen.cpp" />
+    <ClCompile Include="loginValidation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="payment.cpp" />
     <ClCompile Include="seating.cpp" />
+    <ClCompile Include="userManagement.cpp" />
     <ClCompile Include="visualFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data.h" />
     <ClInclude Include="functions.h" />
+    <ClInclude Include="loginScreen.h" />
+    <ClInclude Include="loginValidation.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="payment.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="seating.h" />
     <ClInclude Include="structs.h" />
+    <ClInclude Include="userManagement.h" />
     <ClInclude Include="visualFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
