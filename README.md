@@ -1,7 +1,7 @@
 <h1 align="center">Cinemagic</h1>
 
 <p align = "center">
-  <img src="logo/cinemagiclogo" alt="Cinemagic's Logo"/>
+  <img src="logo/cinemagiclogo.png" alt="Cinemagic's Logo"/>
 </p>
 
 <br>
