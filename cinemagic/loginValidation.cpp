@@ -19,9 +19,6 @@ bool isDigit(char ch) {
 }
 
 bool isValidUsername(const std::string& username) {
-    if (username.length() < 8) {
-        return false;
-    }
 
     for (char ch : username) {
         if (!isAlnum(ch) && ch != '_' && ch != '.') {

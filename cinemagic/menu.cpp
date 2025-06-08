@@ -6,65 +6,65 @@
 #include "pch.h"
 
 void mainMenu() {
+    BookingSystem bookingSystem;
+    SeatingManager seatingManager;
+
     while (true) {
         clearScreen();
         printLogo("logo.txt");
+
         std::cout << "1. Start Booking\n";
         std::cout << "2. Log out\n";
 
-        int choice;
+        int menuChoice = 0;
         std::cout << "Choice (1-2): ";
-        std::cin >> choice;
+        std::cin >> menuChoice;
 
-        if (choice == 2) {
+        if (menuChoice == 2) {
             break;
-            clearScreen();
         }
 
-        if (choice == 1) {
-            int cityChoice = 0, cinemaChoice = 0, genreChoice = 0, movieChoice = 0;
+        if (menuChoice == 1) {
+            int cityChoice = bookingSystem.selectCity();
+            if (cityChoice == -1) {
+                continue;
+            }
 
-            while (true) {
-                cityChoice = selectCity();
-                if (cityChoice == -1) {
-                    break;
-                }
+            int cinemaChoice = bookingSystem.selectCinema(cityChoice);
+            if (cinemaChoice == -1) {
+                continue;
+            }
 
-                cinemaChoice = selectCinema(cityChoice);
-                if (cinemaChoice == -1) {
-                    continue;
-                }
+            int genreChoice = bookingSystem.selectGenre();
+            if (genreChoice == -1) {
+                continue;
+            }
 
-                genreChoice = selectGenre();
-                if (genreChoice == -1) {
-                    continue;
-                }
+            int movieChoice = bookingSystem.selectMovie(genreChoice);
+            if (movieChoice == -1) {
+                continue;
+            }
 
-                movieChoice = selectMovie(genreChoice);
-                if (movieChoice == -1) {
-                    continue;
-                }
+            bookingSystem.printBookingDetails(cityChoice, cinemaChoice, movieChoice);
 
-                printBookingDetails(cityChoice, cinemaChoice, movieChoice);
-                SeatingLayout layout = createSampleLayout();
-                displayLayout(layout);
-                bookSeats(layout);
-                displayLayout(layout);
+            SeatingLayout layout = seatingManager.createSampleLayout();
+            seatingManager.displayLayout(layout);
 
-                std::vector<Seat> selectedSeats;
-                for (const auto& row : layout.seats) {
-                    for (const auto& seat : row) {
-                        if (seat.isBooked) {
-                            selectedSeats.push_back(seat);
-                        }
+            seatingManager.bookSeats(layout);
+
+            seatingManager.displayLayout(layout);
+
+            std::vector<Seat> bookedSeats;
+            for (int i = 0; i < layout.seats.size(); i++) {
+                for (int j = 0; j < layout.seats[i].size(); j++) {
+                    if (layout.seats[i][j].isBooked) {
+                        bookedSeats.push_back(layout.seats[i][j]);
                     }
                 }
-
-                bool isOnlineCustomer = false;
-                completeBooking(cityChoice, cinemaChoice, movieChoice, selectedSeats, isOnlineCustomer);
-
-                break;
             }
+
+            bool isOnlineCustomer = false;
+            bookingSystem.completeBooking(cityChoice, cinemaChoice, movieChoice, bookedSeats, isOnlineCustomer);
         }
         else {
             clearScreen();

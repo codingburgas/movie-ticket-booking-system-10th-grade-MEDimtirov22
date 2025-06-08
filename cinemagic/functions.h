@@ -1,10 +1,14 @@
 #pragma once
-
 #include "structs.h"
+#include <vector>
 
-int selectCity();
-int selectCinema(int cityChoice);
-int selectGenre();
-int selectMovie(int genreChoice);
-void completeBooking(int cityChoice, int cinemaChoice, int movieChoice, const vector<Seat>& selectedSeats, bool isOnlineCustomer);
-void printBookingDetails(int cityChoice, int cinemaChoice, int movieChoice);
+class BookingSystem {
+public:
+    int selectCity();
+    int selectCinema(int cityChoice);
+    int selectGenre();
+    int selectMovie(int genreChoice);
+    void completeBooking(int cityChoice, int cinemaChoice, int movieChoice, const std::vector<Seat>& selectedSeats, bool isOnlineCustomer);
+    void printBookingDetails(int cityChoice, int cinemaChoice, int movieChoice);
+    double calculateTotalPrice(const std::vector<Seat>& selectedSeats);
+};
