@@ -53,25 +53,25 @@ void SeatingManager::displayLayout(const SeatingLayout& layout) const {
     std::cout << "\033[0m\n";
 }
 
-void SeatingManager::bookSeats(SeatingLayout& layout) {
+bool SeatingManager::bookSeats(SeatingLayout& layout) {
     int seatsToBook = 0;
-
-    std::cout << "Enter number of seats to book: ";
+    std::cout << "Enter number of seats to book (0 to go back): ";
     std::cin >> seatsToBook;
-
+    std::cin.ignore();
+    if (seatsToBook == 0) {
+        return false;
+    }
     for (int booked = 0; booked < seatsToBook; booked++) {
         int row = -1, col = -1;
         std::cout << "Enter seat (row and col, e.g., 0 2): ";
         std::cin >> row >> col;
-
+        std::cin.ignore();
         if (row >= 0 && row < layout.seats.size() && col >= 0 && col < layout.seats[0].size()) {
-
             if (layout.seats[row][col].isBooked) {
                 std::cout << "Sorry, that seat is already booked. Please choose another.\n";
                 booked--;
                 continue;
             }
-
             layout.seats[row][col].isBooked = true;
             std::cout << "Seat " << row << "," << col << " booked successfully.\n";
         }
@@ -80,7 +80,7 @@ void SeatingManager::bookSeats(SeatingLayout& layout) {
             booked--;
         }
     }
-
     clearScreen();
     std::cout << "Seats booked successfully! Proceed to payment.\n";
+    return true;
 }

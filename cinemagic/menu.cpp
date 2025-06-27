@@ -45,26 +45,44 @@ void mainMenu() {
                 continue;
             }
 
+            SeatingLayout layout = seatingManager.createSampleLayout();
+            std::vector<Seat> alreadyBookedSeats = bookingSystem.loadBookedSeatsCSV(cityChoice, cinemaChoice, movieChoice);
+            for (int i = 0; i < alreadyBookedSeats.size(); i++) {
+                int row = alreadyBookedSeats[i].row;
+                int col = alreadyBookedSeats[i].col;
+                if (row >= 0 && row < layout.seats.size() && col >= 0 && col < layout.seats[row].size()) {
+                    layout.seats[row][col].isBooked = true;
+                }
+            }
+
+            std::vector<std::vector<bool>> wasBooked(layout.seats.size());
+            for (int i = 0; i < layout.seats.size(); ++i) {
+                wasBooked[i].resize(layout.seats[i].size());
+                for (int j = 0; j < layout.seats[i].size(); ++j) {
+                    wasBooked[i][j] = layout.seats[i][j].isBooked;
+                }
+            }
+
+            clearScreen();
             bookingSystem.printBookingDetails(cityChoice, cinemaChoice, movieChoice);
 
-            SeatingLayout layout = seatingManager.createSampleLayout();
+            seatingManager.displayLayout(layout);
+            if (!seatingManager.bookSeats(layout)) {
+                continue;
+            }
             seatingManager.displayLayout(layout);
 
-            seatingManager.bookSeats(layout);
-
-            seatingManager.displayLayout(layout);
-
-            std::vector<Seat> bookedSeats;
+            std::vector<Seat> bookedNow;
             for (int i = 0; i < layout.seats.size(); i++) {
                 for (int j = 0; j < layout.seats[i].size(); j++) {
-                    if (layout.seats[i][j].isBooked) {
-                        bookedSeats.push_back(layout.seats[i][j]);
+                    if (!wasBooked[i][j] && layout.seats[i][j].isBooked) {
+                        bookedNow.push_back(layout.seats[i][j]);
                     }
                 }
             }
 
             bool isOnlineCustomer = false;
-            bookingSystem.completeBooking(cityChoice, cinemaChoice, movieChoice, bookedSeats, isOnlineCustomer);
+            bookingSystem.completeBooking(cityChoice, cinemaChoice, movieChoice, bookedNow, isOnlineCustomer);
         }
         else {
             clearScreen();

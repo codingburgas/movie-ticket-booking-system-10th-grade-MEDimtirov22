@@ -1,0 +1,57 @@
+[Cities]
+New York
+Los Angeles
+Chicago
+San Francisco
+Houston
+[Cinemas]
+New York|AMC Empire 25
+New York|Regal E-Walk
+New York|Cinema Village
+New York|Angelika Film Center
+Los Angeles|TCL Chinese Theatre
+Los Angeles|AMC Sunset 5
+Los Angeles|Arclight Hollywood
+Los Angeles|The Landmark
+Chicago|AMC River East 21
+Chicago|Landmark's Century Centre
+Chicago|Music Box Theatre
+Chicago|ShowPlace ICON
+San Francisco|Alamo Drafthouse
+San Francisco|AMC Metreon 16
+San Francisco|Roxie Theater
+San Francisco|Castro Theatre
+Houston|Cinemark Memorial City
+Houston|Regal Edwards Greenway Grand
+Houston|AMC Gulf Pointe 30
+Houston|Studio Movie Grill
+[Genres]
+Action
+Adventure
+Animation
+Horror
+[Movies]
+The Batman|Action
+Spider-Man: No Way Home|Action
+Inception|Action
+John Wick|Action
+Mad Max: Fury Road|Action
+Die Hard|Action
+Avatar 2|Adventure
+The Martian|Adventure
+Indiana Jones|Adventure
+Jumanji|Adventure
+Pirates of the Caribbean|Adventure
+Jurassic Park|Adventure
+Inside Out|Animation
+Moana|Animation
+Toy Story|Animation
+Frozen|Animation
+Shrek|Animation
+Coco|Animation
+Get Out|Horror
+A Quiet Place|Horror
+The Conjuring|Horror
+It|Horror
+Hereditary|Horror
+Insidious|Horror

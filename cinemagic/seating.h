@@ -6,5 +6,5 @@ class SeatingManager {
 public:
     SeatingLayout createSampleLayout();
     void displayLayout(const SeatingLayout& layout) const;
-    void bookSeats(SeatingLayout& layout);
+    bool bookSeats(SeatingLayout& layout);
 };

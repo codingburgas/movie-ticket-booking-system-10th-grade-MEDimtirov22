@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="data.cpp" />
+    <ClCompile Include="admin.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="loginScreen.cpp" />
     <ClCompile Include="loginValidation.cpp" />
@@ -139,7 +139,7 @@
     <ClCompile Include="visualFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="data.h" />
+    <ClInclude Include="admin.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="loginScreen.h" />
     <ClInclude Include="loginValidation.h" />
