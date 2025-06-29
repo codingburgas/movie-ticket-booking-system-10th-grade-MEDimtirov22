@@ -19,20 +19,10 @@ Our console application provides users with a seamless and interactive way to br
 
 ## 🔧 Tools 
   <p align="left"> 
-  <a href="https://visualstudio.microsoft.com/"><img src="https://img.icons8.com/fluency/48/000000/visual-studio.png" alt="Visual Studio 2022"/></a>
-    <a href="https://www.microsoft.com/en-ww/microsoft-365/word"><img src="https://img.icons8.com/fluency/48/000000/microsoft-word-2019.png" alt="MS Word logo" width=48px /></a>
-    <a href="https://www.microsoft.com/en-us/microsoft-365/powerpoint"><img src="https://img.icons8.com/fluency/48/000000/microsoft-powerpoint-2019.png" alt="MS PowerPoint logo" width=48px />
+    <a href="https://visualstudio.microsoft.com/"><img src="https://img.icons8.com/fluency/48/000000/visual-studio.png" alt="Visual Studio 2022"/></a>
     <a href="https://git-scm.com/"><img src="https://img.icons8.com/color/48/000000/git.png" alt="Git"/></a>
     <a href="https://git-scm.com/"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" height=48px width=48px/></a>
   </p> 
-  
-## 💼 Documents
-  <ul>
-    <li><a href="documentation/REWIND-documentation.docx">Documentation</a></li>
-    <li><a href="documentation/REWIND-presentation.pptx">Presentation</a></li>
-    <li><a href="documentation/REWIND-QA-Documentation.xlsx">QA Documentation</a></li>
-   </ul>
-
 
 ## 🔧 Installation
 
