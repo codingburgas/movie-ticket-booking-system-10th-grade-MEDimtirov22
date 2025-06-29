@@ -2,10 +2,18 @@
 
 #include <string>
 
-enum PaymentMethod {
+enum class PaymentMethod {
     CREDIT_CARD,
     CASH
 };
+
+inline std::string paymentMethodToString(PaymentMethod method) {
+    switch (method) {
+    case PaymentMethod::CREDIT_CARD: return "CREDIT_CARD";
+    case PaymentMethod::CASH: return "CASH";
+    default: return "UNKNOWN";
+    }
+}
 
 struct PaymentDetails {
     PaymentMethod method;

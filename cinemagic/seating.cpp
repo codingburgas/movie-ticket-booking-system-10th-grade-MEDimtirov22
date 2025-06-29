@@ -1,5 +1,6 @@
 #include "seating.h"
 #include "visualFunctions.h"
+#include "structs.h"
 #include "pch.h"
 
 SeatingLayout SeatingManager::createSampleLayout() {
@@ -16,14 +17,15 @@ SeatingLayout SeatingManager::createSampleLayout() {
             seat.col = colIndex;
             seat.isBooked = false;
             if (rowIndex == 0) {
-                seat.type = PLATINUM;
+                seat.type = SeatType::PLATINUM;
             }
             else if (rowIndex < 3) {
-                seat.type = GOLD;
+                seat.type = SeatType::GOLD;
             }
             else {
-                seat.type = SILVER;
+                seat.type = SeatType::SILVER;
             }
+
             currentRow.push_back(seat);
         }
         layout.seats.push_back(currentRow);
@@ -36,14 +38,21 @@ void SeatingManager::displayLayout(const SeatingLayout& layout) const {
     for (int i = 0; i < layout.seats.size(); i++) {
         for (int j = 0; j < layout.seats[i].size(); j++) {
             const Seat& seat = layout.seats[i][j];
-            char symbol = seat.isBooked ? 'X' : 'O';
-            if (seat.type == SILVER) {
+            char symbol;
+            if (seat.isBooked) {
+                symbol = 'X';
+            }
+            else {
+                symbol = 'O';
+            }
+
+            if (seat.type == SeatType::SILVER) {
                 std::cout << "\033[37m";
             }
-            else if (seat.type == GOLD) {
+            else if (seat.type == SeatType::GOLD) {
                 std::cout << "\033[33m";
             }
-            else if (seat.type == PLATINUM) {
+            else if (seat.type == SeatType::PLATINUM) {
                 std::cout << "\033[36m";
             }
             std::cout << symbol << " ";

@@ -2,6 +2,7 @@
 #include "visualFunctions.h"
 #include "payment.h"
 #include "admin.h"
+#include "structs.h"
 #include "pch.h"
 
 int BookingSystem::selectCity() {
@@ -171,13 +172,13 @@ double BookingSystem::calculateTotalPrice(const std::vector<Seat>& selectedSeats
     double total = 0.0;
     for (const Seat& seat : selectedSeats) {
         switch (seat.type) {
-        case PLATINUM:
+        case SeatType::PLATINUM:
             total += 20.0;
             break;
-        case GOLD:     
+        case SeatType::GOLD:
             total += 15.0; 
             break;
-        case SILVER:  
+        case SeatType::SILVER:
             total += 10.0;
             break;
         }

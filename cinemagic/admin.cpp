@@ -1,10 +1,6 @@
 #include "admin.h"
 #include "visualFunctions.h"
 #include "pch.h"
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
 
 int findString(std::vector<std::string>& v, std::string s) {
     int i;

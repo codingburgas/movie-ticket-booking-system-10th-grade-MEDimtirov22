@@ -1,5 +1,6 @@
 #include "payment.h"
 #include "visualFunctions.h"
+#include "structs.h"
 #include "pch.h"
 
 // Luhn algorithm
@@ -23,17 +24,18 @@ bool validateCreditCard(const std::string& cardNumber) {
 }
 
 bool processPayment(const PaymentDetails& payment) {
-    if (payment.method == CREDIT_CARD) {
+    if (payment.method == PaymentMethod::CREDIT_CARD) {
         std::cout << "Processing credit card payment...\n";
         std::cout << "Card Number: " << payment.cardNumber << std::endl;
     }
-    else if (payment.method == CASH) {
+    else if (payment.method == PaymentMethod::CASH) {
         std::cout << "Processing cash payment...\n";
         std::cout << "Please submit $" << std::fixed << std::setprecision(2) << payment.amount << " to the cashier.\n";
     }
     std::cout << "Payment of $" << std::fixed << std::setprecision(2) << payment.amount << " successful!\n";
     return true;
 }
+
 
 void displayPaymentOptions(bool isOnlineCustomer) {
     std::cout << "Payment Options:\n";
@@ -84,7 +86,7 @@ PaymentDetails getPaymentDetails(bool isOnlineCustomer, double totalAmount) {
 
     while (true) {
         if (choice == 1) {
-            payment.method = CREDIT_CARD;
+            payment.method = PaymentMethod::CREDIT_CARD;
 
             std::string rawInput;
             std::cout << "Enter your credit card number (16 digits) or 0 to go back: ";
@@ -108,7 +110,7 @@ PaymentDetails getPaymentDetails(bool isOnlineCustomer, double totalAmount) {
             break;
         }
         else if (choice == 2 && !isOnlineCustomer) {
-            payment.method = CASH;
+            payment.method = PaymentMethod::CASH;
             break;
         }
     }
